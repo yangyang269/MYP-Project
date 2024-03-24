@@ -1,0 +1,159 @@
+.gameBoard
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 20px;
+    width: 20%;
+}
+
+.gameCell {
+    border: 1px solid black;
+    padding: 0;
+    position: relative;
+    
+    width: 140px; /* Define your desired width */
+    height: 80px; /* Define your desired height */
+    background-color: white; /* Set a default background color */
+    /* border-radius: 5px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gameCell img {
+    width: 80%; /* Set image width to 100% of parent container */
+    height: 100%; /* Set image height to 100% of parent container */
+    object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+.cellText {
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+
+#gameMessage
+{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(94, 246, 86);
+    padding-top: 0px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+#quotes
+{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+#groupMember1
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+#groupMember2
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    padding-top: 55px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#groupMember3
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    padding-top: 55px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#score
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+#deductButton1
+{
+    margin-top: 10px;
+}
+
+#deductButton2
+{
+    margin-top: 10px;
+}
+
+#deductButton3
+{
+    margin-top: 10px;
+}
+
+#resetButton
+{
+    margin-top: 40px;
+}
+
+body
+{
+    display: grid;
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal 
+{
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 60px; 
+    padding-bottom: 60px; 
+    width: 40%; 
+    height: 30%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6);
+    place-items: center;
+    border-radius: 25px;
+}
+
+.modal-content 
+{
+    background-color: #fefefe;
+    border-radius: 25px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    font-size: 18px;
+    width: 60%;
+    place-items: center;
+}
+
+#close 
+{
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#close:hover, #close:focus 
+{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

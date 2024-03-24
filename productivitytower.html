@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h2>Productivity Towers</h2>
+        <a href="home.html">Home</a>
+        <a href="brainstorm.html">Brainstorm Game</a>
+        <link rel="stylesheet" href="productivitytower.css">
+        <script src="productivitytower.js"></script>
+        <style>
+            body {
+                background-image: url('background.jpeg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%
+            }
+        </style>
+    </head>
+    <body>
+        <button id="instructions" onclick="showWindow();">Instructions</button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span id="close" onclick="hideWindow();">&times;</span>
+                <p>Welcome to the Producitivity Towers! Let's be productive together! Everytime you complete a task which gets you closer to your goal, 
+                    click one of the boxes in the tower! Let's work on getting that tower filled! Click the "x" or click in the black area to close this message. 
+                    Good Luck!
+                </p>
+            </div>
+        </div>
+
+        <script>
+            var modal = document.getElementById("myModal");
+
+            function showWindow() 
+            {
+                modal.style.display = "block";
+            }
+
+            function hideWindow() 
+            {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) 
+            {
+                if (event.target == modal) 
+                {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+            <div id="towersMessage"></div>
+            <div class="gameBoard">
+                <div class="gameCell" id = 'a1' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+                <div class="gameCell" id = 'a2' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+                <div class="gameCell" id = 'b1' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+                <div class="gameCell" id = 'b2' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+                <div class="gameCell" id = 'c1' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+                <div class="gameCell" id = 'c2' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+                <div class="gameCell" id = 'd1' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+                <div class="gameCell" id = 'd2' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+                <div class="gameCell" id = 'e1' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+                <div class="gameCell" id = 'e2' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+                <div class="gameCell" id = 'f1' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+                <div class="gameCell" id = 'f2' onclick = "takeTurn(this);"><img src="ClickHere.png" width="70px"></div>
+            </div>
+        </div>
+        <div id="gameMessage"></div>
+        <div id="quotes"></div>
+        <button id="resetButton">Reset Tower</button> 
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h2>Brainstorm Machine</h2>
+        <a href="home.html">Home</a>
+        <a href="productivitytower.html">Productivity Tower</a>
+        <p></p>
+        <link rel="stylesheet" href="brainstorm.css">
+        <script src="brainstorm.js"></script>
+    </head>
+    <body>
+        <button id="instructions" onclick="showWindow();">Instructions</button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span id="close" onclick="hideWindow();">&times;</span>
+                <p>Welcome to the Brainstorm Machine! Let's make sure that we're being as productive as possible. Everytime a group member comes upwith an idea, 
+                    give them a point! Set a timer and compete to see who can contribute the most ideas! Click the "x" or click in the black area to close this message. 
+                    Good Luck!
+                </p>
+            </div>
+        </div>
+
+        <script>
+            var modal = document.getElementById("myModal");
+
+            function showWindow() 
+            {
+                modal.style.display = "block";
+            }
+
+            function hideWindow() 
+            {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) 
+            {
+                if (event.target == modal) 
+                {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+        <div id="score"></div>
+        <div id="groupMember1"></div>
+        <button id="userButton1">Add Point</button> 
+        <button id="deductButton1">Deduct Point</button> 
+        <div id="groupMember2"></div>
+        <button id="userButton2">Add Point</button>
+        <button id="deductButton2">Deduct Point</button> 
+        <div id="groupMember3"></div>
+        <button id="userButton3">Add Point</button>
+        <button id="deductButton3">Deduct Point</button> 
+        <button id="resetButton">Reset Scores</button> 
+    </body>
+</html>
