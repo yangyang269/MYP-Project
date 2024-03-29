@@ -1,159 +1,132 @@
-.gameBoard
-{
-    display: grid;
-    grid-template-columns: auto auto;
-    padding: 20px;
-    width: 20%;
+totalIdeas = 0
+var userName1 = prompt("What is the first group member's name?");
+var userName2 = prompt("What is the second group member's name?");
+var userName3 = prompt("What is the third group member's name?");
+userIdeas1 = 0
+userIdeas2 = 0
+userIdeas3 = 0
+
+userName1 = userName1.toLowerCase();
+userName2 = userName2.toLowerCase();
+userName3 = userName3.toLowerCase();
+userName1 = userName1.charAt(0).toUpperCase() + userName1.slice(1);
+userName2 = userName2.charAt(0).toUpperCase() + userName2.slice(1);
+userName3 = userName3.charAt(0).toUpperCase() + userName3.slice(1);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var towersMessage = document.getElementById("score");
+    if (score) {
+        score.innerHTML = "Total Ideas: " + totalIdeas; // Example message
+    } else {
+        console.error("Element with ID 'score' not found.");
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var groupMember1 = document.getElementById("groupMember1");
+    if (groupMember1) {
+        groupMember1.innerHTML = userName1 + ": " + userIdeas1; // Example message
+    } else {
+        console.error("Element with ID 'score' not found.");
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var groupMember2 = document.getElementById("groupMember2");
+    if (groupMember2) {
+        groupMember2.innerHTML = userName2 + ": " + userIdeas2; // Example message
+    } else {
+        console.error("Element with ID 'score' not found.");
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var groupMember3 = document.getElementById("groupMember3");
+    if (groupMember3) {
+        groupMember3.innerHTML = userName3 + ": " + userIdeas3; // Example message
+    } else {
+        console.error("Element with ID 'score' not found.");
+    }
+});
+
+function addPointUser1() {
+    userIdeas1 += 1;
+    totalIdeas += 1;
+    groupMember1.innerHTML = userName1 + ": " + userIdeas1;
+    score.innerHTML = "Total Ideas: " + totalIdeas;
 }
 
-.gameCell {
-    border: 1px solid black;
-    padding: 0;
-    position: relative;
-    
-    width: 140px; /* Define your desired width */
-    height: 80px; /* Define your desired height */
-    background-color: white; /* Set a default background color */
-    /* border-radius: 5px; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.gameCell img {
-    width: 80%; /* Set image width to 100% of parent container */
-    height: 100%; /* Set image height to 100% of parent container */
-    object-fit: cover; /* Ensure the image covers the entire container */
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("userButton1").addEventListener("click", addPointUser1);
+});
+
+function addPointUser2() {
+    userIdeas2 += 1;
+    totalIdeas += 1;
+    groupMember2.innerHTML = userName2 + ": " + userIdeas2;
+    score.innerHTML = "Total Ideas: " + totalIdeas;
 }
 
-.cellText {
-    font-size: 16px; /* Adjust the font size as needed */
-  }
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("userButton2").addEventListener("click", addPointUser2);
+});
 
-#gameMessage
-{
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(94, 246, 86);
-    padding-top: 0px;
-    padding-bottom: 5px;
-    text-align: center;
+function addPointUser3() {
+    userIdeas3 += 1;
+    totalIdeas += 1;
+    groupMember3.innerHTML = userName3 + ": " + userIdeas3;
+    score.innerHTML = "Total Ideas: " + totalIdeas;
 }
 
-#quotes
-{
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-    padding-top: 0px;
-    padding-bottom: 5px;
-    text-align: center;
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("userButton3").addEventListener("click", addPointUser3);
+});
+
+function deductPointUser1() {
+    userIdeas1 -= 1;
+    totalIdeas -= 1;
+    groupMember1.innerHTML = userName1 + ": " + userIdeas1;
+    score.innerHTML = "Total Ideas: " + totalIdeas;
 }
 
-#groupMember1
-{
-    font-size: 14px;
-    font-weight: bold;
-    color: black;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: center;
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("deductButton1").addEventListener("click", deductPointUser1);
+});
+
+function deductPointUser2() {
+    userIdeas2 -= 1;
+    totalIdeas -= 1;
+    groupMember2.innerHTML = userName2 + ": " + userIdeas2;
+    score.innerHTML = "Total Ideas: " + totalIdeas;
 }
 
-#groupMember2
-{
-    font-size: 14px;
-    font-weight: bold;
-    color: black;
-    padding-top: 55px;
-    padding-bottom: 10px;
-    text-align: center;
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("deductButton2").addEventListener("click", deductPointUser2);
+});
+
+function deductPointUser3() {
+    userIdeas3 -= 1;
+    totalIdeas -= 1;
+    groupMember3.innerHTML = userName3 + ": " + userIdeas3;
+    score.innerHTML = "Total Ideas: " + totalIdeas;
 }
 
-#groupMember3
-{
-    font-size: 14px;
-    font-weight: bold;
-    color: black;
-    padding-top: 55px;
-    padding-bottom: 10px;
-    text-align: center;
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("deductButton3").addEventListener("click", deductPointUser3);
+});
+
+function reset() {
+    totalIdeas = 0;
+    userIdeas1 = 0
+    userIdeas2 = 0
+    userIdeas3 = 0
+    groupMember1.innerHTML = userName1 + ": " + userIdeas1;
+    groupMember2.innerHTML = userName2 + ": " + userIdeas2;
+    groupMember3.innerHTML = userName3 + ": " + userIdeas3;
+    score.innerHTML = "Total Ideas: " + totalIdeas;
 }
 
-#score
-{
-    font-size: 14px;
-    font-weight: bold;
-    color: black;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: center;
-}
-
-#deductButton1
-{
-    margin-top: 10px;
-}
-
-#deductButton2
-{
-    margin-top: 10px;
-}
-
-#deductButton3
-{
-    margin-top: 10px;
-}
-
-#resetButton
-{
-    margin-top: 40px;
-}
-
-body
-{
-    display: grid;
-    place-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.modal 
-{
-    display: none;
-    position: fixed; 
-    z-index: 1; 
-    padding-top: 60px; 
-    padding-bottom: 60px; 
-    width: 40%; 
-    height: 30%;
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.6);
-    place-items: center;
-    border-radius: 25px;
-}
-
-.modal-content 
-{
-    background-color: #fefefe;
-    border-radius: 25px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    font-size: 18px;
-    width: 60%;
-    place-items: center;
-}
-
-#close 
-{
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-#close:hover, #close:focus 
-{
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("resetButton").addEventListener("click", reset);
+});
